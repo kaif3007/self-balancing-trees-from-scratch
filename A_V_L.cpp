@@ -140,16 +140,16 @@ if(head->data==data)
 }
 	int b=balance(head);
 	
-	if(b>1 && data<head->left->data)
+	if(b>1 && balance(head->left)>=0)
 	return rightrotate(head);
-	if(b<-1 && data>head->right->data)
+	if(b<-1 && balance(head->right)<=0)
 	return leftrotate(head);
-	if(b>1 && data>head->left->data)
+	if(b>1 && balance(head->left)<0)
 	{
 		head->left=leftrotate(head->left);
 		return rightrotate(head);                                  //four different cases ll rr lr rl;
 	}
-	if(b<-1 && data<head->right->data)
+	if(b<-1 && balance(head->right)>0)
 	{
 		head->right=rightrotate(head->right);
 		return leftrotate(head);
