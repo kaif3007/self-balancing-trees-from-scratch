@@ -81,16 +81,16 @@ node *avl(node*root,int data)
 	
 	int b=balance(root);
 	
-	if(b>1 && data<root->left->data)
+	if(b>1 && balance(root->left)>0)
 	return rightrotate(root);
-	if(b<-1 && data>root->right->data)
+	if(b<-1 && balance(root->right)<0)
 	return leftrotate(root);
-	if(b>1 && data>root->left->data)
+	if(b>1 && balance(root->left)<0)
 	{
 		root->left=leftrotate(root->left);
 		return rightrotate(root);                                  //four different cases ll rr lr rl;
 	}
-	if(b<-1 && data<root->right->data)
+	if(b<-1 && balance(root->right)>0)
 	{
 		root->right=rightrotate(root->right);
 		return leftrotate(root);
