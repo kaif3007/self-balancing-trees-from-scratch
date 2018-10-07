@@ -47,6 +47,8 @@ void rightrot(node* &root,node* &pt)
 	if(pt->left!=NULL)
 	pt->left->parent=pt;
 	
+	temp->parent=pt->parent;
+	
 	if(pt->parent==NULL)
 	root=temp;
 	
@@ -69,6 +71,7 @@ void leftrot(node* &root,node* &pt)
 	if(pt->right!=NULL)
 	pt->right->parent=pt;
 	
+	temp->parent=pt->parent;
 	if(pt->parent==NULL)
 	root=temp;
 	
