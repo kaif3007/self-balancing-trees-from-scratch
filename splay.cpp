@@ -161,7 +161,7 @@ return;
 int main()
 { node *root = NULL;
 root=insert(root,90);
-root=insert(root,200);
+root=insert(root,290);
 root=insert(root,40);
 root=insert(root,20);
 root=insert(root,10);
